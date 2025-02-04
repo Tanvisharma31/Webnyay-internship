@@ -1,0 +1,26 @@
+2025-01-15 13:07:55,719 - INFO - Successfully authenticated with Microsoft Graph API
+2025-01-15 13:07:56,431 - INFO - Processing Sample Letter 0.pdf
+2025-01-15 13:07:56,526 - INFO - Renamed 'C:\Users\tanvi\OneDrive\Documents\pdfs\Sample Letter 0.pdf' to 'C:\Users\tanvi\OneDrive\Documents\pdfs\Tanvi Sharma.pdf'
+2025-01-15 13:07:58,426 - INFO - Processing Sample Letter 001.pdf
+2025-01-15 13:07:58,514 - INFO - Renamed 'C:\Users\tanvi\OneDrive\Documents\pdfs\Sample Letter 001.pdf' to 'C:\Users\tanvi\OneDrive\Documents\pdfs\Virendra Sharma.pdf'
+2025-01-15 13:08:00,587 - INFO - Processing Sample Letter 10.pdf
+2025-01-15 13:08:00,685 - INFO - Renamed 'C:\Users\tanvi\OneDrive\Documents\pdfs\Sample Letter 10.pdf' to 'C:\Users\tanvi\OneDrive\Documents\pdfs\Preetam Singh.pdf'
+2025-01-15 13:08:03,604 - INFO - Processing Sample Letter 80.pdf
+2025-01-15 13:08:03,695 - INFO - Renamed 'C:\Users\tanvi\OneDrive\Documents\pdfs\Sample Letter 80.pdf' to 'C:\Users\tanvi\OneDrive\Documents\pdfs\John Doe.pdf'
+2025-01-15 13:08:05,957 - INFO - Processing Sample Letter A.pdf
+2025-01-15 13:08:06,051 - ERROR - Error renaming file C:\Users\tanvi\OneDrive\Documents\pdfs\Sample Letter A.pdf: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\tanvi\\OneDrive\\Documents\\pdfs\\Sample Letter A.pdf' -> 'C:\\Users\\tanvi\\OneDrive\\Documents\\pdfs\\David Willow.pdf'
+2025-01-15 13:08:06,136 - INFO - Excel file updated successfully
+2025-01-15 13:08:06,136 - INFO - Processing complete. Processed: 4, Failed: 1
+2025-01-15 13:08:44,184 - INFO - Successfully authenticated with Microsoft Graph API
+2025-01-15 13:08:44,678 - INFO - Processing John Doe.pdf
+2025-01-15 13:08:44,769 - INFO - Renamed 'C:\Users\tanvi\OneDrive\Documents\pdfs\John Doe.pdf' to 'C:\Users\tanvi\OneDrive\Documents\pdfs\John Doe_1.pdf'
+2025-01-15 13:08:46,818 - INFO - Processing Preetam Singh.pdf
+2025-01-15 13:08:46,882 - INFO - Renamed 'C:\Users\tanvi\OneDrive\Documents\pdfs\Preetam Singh.pdf' to 'C:\Users\tanvi\OneDrive\Documents\pdfs\Preetam Singh_1.pdf'
+2025-01-15 13:08:48,999 - INFO - Processing Sample Letter A.pdf
+2025-01-15 13:08:49,061 - INFO - Renamed 'C:\Users\tanvi\OneDrive\Documents\pdfs\Sample Letter A.pdf' to 'C:\Users\tanvi\OneDrive\Documents\pdfs\David Willow.pdf'
+2025-01-15 13:08:50,300 - INFO - Processing Tanvi Sharma.pdf
+2025-01-15 13:08:50,371 - INFO - Renamed 'C:\Users\tanvi\OneDrive\Documents\pdfs\Tanvi Sharma.pdf' to 'C:\Users\tanvi\OneDrive\Documents\pdfs\Tanvi Sharma_1.pdf'
+2025-01-15 13:08:51,864 - INFO - Processing Virendra Sharma.pdf
+2025-01-15 13:08:51,935 - INFO - Renamed 'C:\Users\tanvi\OneDrive\Documents\pdfs\Virendra Sharma.pdf' to 'C:\Users\tanvi\OneDrive\Documents\pdfs\Virendra Sharma_1.pdf'
+2025-01-15 13:08:54,966 - INFO - Excel file updated successfully
+2025-01-15 13:08:54,967 - INFO - Processing complete. Processed: 5, Failed: 0
