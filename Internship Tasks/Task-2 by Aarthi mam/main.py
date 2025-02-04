@@ -36,23 +36,23 @@ def download_pdf(pdf_url, folder_name, file_name):
     except Exception as e:
         print(f"Failed to download {file_name} in {folder_name}: {e}")
 
-# Function to scrape PDF links from a folder page
-def scrape_folder_page(url, folder_name, seen_pdfs):
+# Function to scrape filings and PDF links from a folder page
+def scrape_folder_page(url, folder_name, seen_pdfs, filings_writer):
     response = requests.get(url)
     soup = BeautifulSoup(response.content, 'html.parser')
     
     # List to store PDF entries
     pdf_entries = []
     
-    # Locate table containing the rules and their links
+    # Locate table containing the filings and their links
     table = soup.find('table', {'id': 'sample_1'})  # Target the table with ID 'sample_1'
     if table:
         rows = table.find_all('tr')[1:]  # Skip header row
         for row in rows:
             cols = row.find_all('td')
             if len(cols) > 1:
+                # Extract Filing information
                 pdf_name = cols[1].get_text(strip=True)
-                # Find the anchor tag within the second column
                 pdf_link = cols[1].find('a')['href']
                 issue_year = cols[0].get_text(strip=True)
 
@@ -65,24 +65,23 @@ def scrape_folder_page(url, folder_name, seen_pdfs):
                     continue
                 seen_pdfs.add(pdf_link)
 
-                # Store the PDF entry
+                # Store the PDF entry in the filings CSV
+                filings_writer.writerow([folder_name, pdf_name, issue_year, pdf_link])
                 pdf_entries.append([folder_name, pdf_name, issue_year, pdf_link])
-    
+
     return pdf_entries
 
 # Function to scrape all PDF links and save them to CSV
 def scrape_and_save():
     seen_pdfs = set()  # Set to track seen PDF URLs
     with open('pdf_links.csv', mode='w', newline='') as file:
-        writer = csv.writer(file)
-        writer.writerow(["Folder", "PDF Name", "Issue Year", "PDF Link"])
+        filings_writer = csv.writer(file)
+        filings_writer.writerow(["Folder", "PDF Name", "Issue Year", "PDF Link"])
         
         # Loop through each folder URL
         for folder_name, url in folder_urls.items():
             print(f"Scraping {folder_name}...")
-            pdf_entries = scrape_folder_page(url, folder_name, seen_pdfs)
-            for entry in pdf_entries:
-                writer.writerow(entry)
+            pdf_entries = scrape_folder_page(url, folder_name, seen_pdfs, filings_writer)
 
 # Function to download PDFs from the CSV and save to corresponding folders
 def download_pdfs_from_csv():
